@@ -1,6 +1,7 @@
 const express = require("express");
 const data = require("./data.json");
 const cors = require("cors");
+const port = process.env.PORT || 3000
 
 function findById(data, id) {
     for (var i = 0; i < data.length; i++) {
@@ -30,4 +31,4 @@ app.get("/:id", function(request, response) {
         response.json({data: record});
     }
 })
-app.listen(4000);
+app.listen(port);
